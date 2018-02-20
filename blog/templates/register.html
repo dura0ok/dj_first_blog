@@ -1,0 +1,10 @@
+{% extends "base.html" %} {% block content %}
+<div class="row">
+    <form method="post">
+        {% csrf_token %} {{ form }} {% if test == '' %} {% else %}
+        <h5 class="good">{{ test }}</h5> {% endif %}
+        <h5><a href="/login">Войти</a></h5>
+        <button type="submit" class="btn btn-primary">Регистрация</button>
+    </form>
+</div>
+{% endblock %}

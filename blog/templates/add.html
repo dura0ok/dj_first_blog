@@ -1,0 +1,7 @@
+{% extends 'base.html' %} {% comment %} Типа комментарииы {% endcomment %} {% block content %}
+<div class="adds">
+    <form id="formsk" enctype="multipart/form-data" method="POST" class="post-form">{% csrf_token %} {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+</div>
+{% endblock %}

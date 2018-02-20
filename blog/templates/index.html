@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% load static %}
+    {% for post in posts %}
+<div class="post">
+    <h1><a href="/post/{{ post.id }}">{{ post.title }}</a></h1>
+    <img class="img" src="{{ post.image.url }}">
+    <h2>Автор-{{ post.author }}</h2>
+    <p>Опубликовано: {{ post.published_date }}</p>
+    <h4>{{ post.text|linebreaksbr|truncatechars:70 }}</h4>
+    <a href="/post/{{ post.id }}">Читать далее</a>
+</div>
+{% empty %}
+<h4 id="empty">Нету статей,добавьте статью</h4> {% endfor %}
+<div class="pagination">
+    <span class="step-links">
+        {% if posts.has_previous %}
+            <a href="?page={{ posts.previous_page_number }}">Назад</a>
+            {% endif %}
+             <p>Страница {{ posts.number }} из {{ posts.paginator.num_pages }}. </p>
+         {% if posts.has_next %}
+             <a href="?page={{ posts.next_page_number }}">Дальше</a>
+         {% endif %}
+    </span>
+</div>
+{% endblock %}

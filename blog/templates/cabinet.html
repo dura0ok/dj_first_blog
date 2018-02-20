@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% block content %}
+<div class="cabinet">
+    <h3>Привет,{{ user.username }}</h3>
+    <img id="asv" width="500" height="300" src="{{ user.client.user_photo.url }}">
+    <br>
+    <p>Сменить аватарку можно ниже</p>
+    <form enctype="multipart/form-data" method="POST" class="post-form">{% csrf_token %} {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+</div>
+{% endblock %}

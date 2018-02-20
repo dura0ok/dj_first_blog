@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% block content %}
+<div class="art">
+    {% if user == post.author %}
+    <a id="edit" href="/post/{{ post.id }}/edit">Редактировать статью</a> {% endif %}
+    <h5>{{ post.title }}</h5>
+    <h6>{{ post.published_date }}</h6>
+    <p>{{ post.text|linebreaksbr }}</p>
+</div>
+<hr>
+<h3 id="cm">Комментарии</h3>
+<div class="comments">
+    {% for comment in comments %}
+    <div class="comment">
+        <img id="ava" src="{{ comment.author.client.user_photo.url }}" width="300" height="200">
+        <h4>Автор:{{ comment.author }}</h4>
+        <h6> Опубликовано: {{ comment.data }}</h6>
+        <p>{{ comment.text }}</p>
+    </div>
+    {% empty %}
+    <h5 id="empty">Комментариев нету!Оставьте свой первым</h5> {% endfor %}
+    <div class="myform">
+        {% if user.is_authenticated %}
+        <form enctype="multipart/form-data" method="POST" class="post-form">{% csrf_token %} {{ com.as_p }}
+            <button type="submit" class="save btn btn-default">Save</button>
+        </form>
+        {% else %}
+        <h2>Авторизуйтесь,чтобы оставлять комментарии</h2> {% endif %}
+    </div>
+</div>
+{% endblock %}

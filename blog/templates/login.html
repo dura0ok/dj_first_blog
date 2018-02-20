@@ -1,0 +1,9 @@
+{% extends "base.html" %} {% load static %} {% block css %}
+<link rel="stylesheet" href="{% static 'login.css' %}"> {% endblock %} {% block content %}
+<form method="post">
+    {% csrf_token %} {{ form }} {% if status == '' %} {% else %}
+    <h5 class="error">{{ status }}</h5> {% endif %}
+    <h5><a href="{% url 'register' %}">Регистрация</a></h5>
+    <button type="submit" class="btn btn-primary">Войти</button>
+</form>
+{% endblock %}

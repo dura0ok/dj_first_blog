@@ -1,0 +1,416 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    height: 75px;
+    background-color: black;
+}
+
+header span {
+    color: #EE2412;
+    font-size: 40px;
+    line-height: 80px;
+    font-family: 'Comic Sans MS';
+}
+
+header h3 {
+    line-height: 75px;
+    margin-left: 1%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    font-size: 22px;
+    font-style: italic;
+    color: white;
+}
+
+header ul {
+    margin-left: 2%;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+header ul li a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+    line-height: 75px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+.post {
+    text-align: center;
+    margin-top: 2%;
+}
+
+.post a {
+    font-size: 1.2em;
+    display: block;
+    margin-bottom: 1%;
+    text-decoration: none;
+    color: black;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: lighter;
+}
+
+.post p {
+    font-family: 'Ubuntu', sans-serif;
+    font-style: italic;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.post h4 {
+    margin-top: 1%;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: lighter;
+}
+
+.user {
+    margin-left: 2%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+.user p {
+    margin-left: 1%;
+    line-height: 75px;
+    color: white;
+}
+
+.user a {
+    text-decoration: none;
+    color: #D23932;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+header img {
+    display: block;
+    margin-left: 1%;
+    margin-top: 1%;
+    width: 100px;
+    height: 60px;
+}
+
+.art h5 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.art h6 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+    text-align: center;
+    font-style: italic;
+}
+
+.art p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    text-align: center;
+}
+
+.art {
+    margin-top: 2%;
+}
+
+#edit {
+    display: block;
+    margin-bottom: 2%;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
+#empty {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    display: block;
+    color: black;
+    margin-top: 2%;
+    font-size: 30px;
+}
+
+.img {
+    width: 400px;
+    height: 300px;
+}
+
+#formsk {
+    margin-top: 2%;
+    margin-left: 20%;
+}
+
+.wrapper h1 {
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.cabinet {
+    margin-top: 2%;
+    margin-left: 5%;
+}
+
+.comments {
+    margin-top: 5%;
+}
+
+.comments h4 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    font-size: 24px;
+    text-align: center;
+}
+
+.comments h6 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    font-style: italic;
+    font-size: 20px;
+    text-align: center;
+}
+
+.comments p {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    font-size: 20px;
+}
+
+#cm {
+    text-align: center;
+}
+
+.art {
+    margin-bottom: 4%;
+}
+
+#ava {
+    display: block;
+    margin: 0 auto;
+}
+
+#empty {
+    text-align: center;
+}
+
+.myform {
+
+    margin-top: 2%;
+}
+
+.myform button {
+    display: block;
+    margin: 0 auto;
+    margin-top: 2%;
+}
+
+.myform h2 {
+    text-align: center;
+}
+
+.current p {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    font-size: 24px;
+}
+
+.step-links p {
+    text-align: center;
+    font-size: 20px;
+}
+
+.step-links {
+    display: block;
+    margin-top: 2%;
+}
+
+.step-links a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    font-size: 20px;
+    display: block;
+    text-align: center;
+}
+
+.phone {
+    display: none;
+}
+
+
+
+/* Media */
+
+
+/* Стили для маленьких экранов (дисплей шириной от 576 пикселей до 767 пикселей) */
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .hit {
+        display: none;
+    }
+    header h3 {
+        margin-left: 25%;
+        display: block;
+        text-align: center;
+        font-size: 40px;
+    }
+    .phone {
+        display: block;
+        margin-top: 2%;
+        margin-bottom: 15%;
+    }
+    .phone h2 {
+        text-align: center;
+        display: block;
+        font-size: 40px;
+    }
+    .phone img {
+        height: 300px;
+        width: 500px;
+        display: block;
+        margin: 0 auto;
+    }
+    .phone a {
+        text-decoration: none;
+        color: #CB2B2B;
+    }
+    .phone nav {
+        margin-top: 2%;
+
+        height: 75px;
+    }
+    .phone ul {
+        margin-left: 30%;
+        list-style: none;
+        line-height: 75px;
+        display: flex;
+        flex-direction: row;
+    }
+    .phone ul li a {
+        color: black;
+        margin-left: 15px;
+        font-size: 30px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: lighter;
+    }
+    .cabinet h3, #asv {
+        display: none;
+    }
+    .cabinet p {
+        text-align: center;
+        font-size: 40px;
+    }
+    .cabinet button {
+        display: block;
+        margin: 0 auto;
+        width: 80px;
+        height: 40px;
+    }
+
+    .adds input,
+    textarea {
+        margin-bottom: 2%;
+    }
+    .adds button {
+
+        width: 80px;
+        height: 40px;
+    }
+}
+
+
+
+
+/* Стили для средних экранов (дисплей шириной от 768 пикселей до 991 пикселей) */
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .hit {
+        display: none;
+    }
+    header h3 {
+        margin-left: 25%;
+        display: block;
+        text-align: center;
+        font-size: 40px;
+    }
+    .phone {
+        display: block;
+        margin-top: 2%;
+        margin-bottom: 15%;
+    }
+    .phone h2 {
+        text-align: center;
+        display: block;
+        font-size: 40px;
+    }
+    .phone img {
+        height: 300px;
+        width: 500px;
+        display: block;
+        margin: 0 auto;
+    }
+    .phone a {
+        text-decoration: none;
+        color: #CB2B2B;
+    }
+    .phone nav {
+        margin-top: 2%;
+
+        height: 75px;
+    }
+    .phone ul {
+        margin-left: 30%;
+        list-style: none;
+        line-height: 75px;
+        display: flex;
+        flex-direction: row;
+    }
+    .phone ul li a {
+        color: black;
+        margin-left: 15px;
+        font-size: 30px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: lighter;
+    }
+    .cabinet h3,
+    #asv {
+        display: none;
+    }
+    .cabinet p {
+        text-align: center;
+        font-size: 40px;
+    }
+    .cabinet button {
+        display: block;
+        margin: 0 auto;
+        width: 80px;
+        height: 40px;
+    }
+
+    .adds input,
+    textarea {
+        margin-bottom: 2%;
+    }
+    .adds button {
+
+        width: 80px;
+        height: 40px;
+    }
+}
+
+
+
+
+/* Стили для больших экранов (дисплей шириной от 992 пикселей до 1199 пикселей) */
+
+@media (min-width: 992px) and (max-width: 1199px) {}

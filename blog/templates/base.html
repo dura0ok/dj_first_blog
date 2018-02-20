@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <meta charset="UTF-8">
+    <title>Stepan</title>
+</head>
+
+<body>
+    <header>
+        <h3>Блог-Просто о мире IT!</h3>
+        <ul>
+            {% if user.is_authenticated %}
+            <li class="hit"><a href="{% url 'post_new' %}">Добавить запись</a></li>
+        </ul>
+        <img class="hit" src="{{ user.client.user_photo.url }}">
+        <div class="user">
+            <p class="hit">Привет,<a href="/cabinet">{{ user.username|truncatechars:17 }}</a></p>
+        </div>
+        <ul>
+            <li class="hit"><a href="/logout">Выйти</a></li>
+        </ul>
+        {% else %}
+        <ul>
+            <li><a href="/register">Регистрация</a></li>
+            <li><a href="/login">Авторизация</a></li>
+        </ul>
+        {% endif %}
+    </header>
+    {% if user.is_authenticated %}
+    <div class="phone">
+        <h2>Привет,<a href="/cabinet">{{ user.username }}</a></h2>
+        <img src="{{ user.client.user_photo.url }}">
+        <br>
+        <nav>
+            <ul>
+                <li><a href="{% url 'post_new' %}">Добавить запись</a></li>
+                <li><a href="/logout">Выйти</a></li>
+            </ul>
+        </nav>
+    </div>
+    {% endif %}
+    <div class="wrapper">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+
+</html>
+
