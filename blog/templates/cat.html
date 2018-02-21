@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+    {% block content %}
+        <div class="categ">
+        <h5 id="test">Статьи из категории {{ now }} </h5>
+{% for post in cat %}
+<div class="post">
+    <h1><a href="/post/{{ post.id }}">{{ post.title }}</a></h1>
+    <img class="img" src="{{ post.image.url }}">
+    <h2>Автор-{{ post.author }}</h2>
+    <h3>{{ post.category }}</h3>
+    <p>Опубликовано: {{ post.published_date }}</p>
+    <h4>{{ post.text|linebreaksbr|truncatechars:70 }}</h4>
+    <a href="/post/{{ post.id }}">Читать далее</a>
+</div>
+
+{% endfor %}
+        </div>
+    {% endblock %}

@@ -2,14 +2,16 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render, redirect
 from django.utils import timezone
 from user_cabinet.forms import CommentForm
-from .models import Post, Comment
+from .models import Post, Comment, Category
+from .forms import PostForm
+from django.views import generic
 
-
-from django.shortcuts import get_list_or_404, get_object_or_404
+from django.shortcuts import get_object_or_404
 
 
 def post_list(request):
     posts = Post.objects.all()
+    Categories = Category.objects.all()
     paginator = Paginator(posts, 10)  # Show 25 contacts per page
 
     page = request.GET.get('page')
@@ -23,6 +25,8 @@ def post_list(request):
         contacts = paginator.page(paginator.num_pages)
     context = {
         'posts': contacts,
+        'category': Categories
+
 
     }
     return render(request, 'index.html', context=context)
@@ -48,7 +52,7 @@ def getfull(request, id):
             form.save()
 
     else:
-        form = PostForm()
+        form = CommentForm()
 
     return render(request, 'post.html', context=context)
 
@@ -89,3 +93,18 @@ def comment(request):
         
     }
     return render(request, 'post.html', context=context)
+
+
+def getcat(request, id):
+    now = Category.objects.get(id=id)
+    cat = Post.objects.filter(category=id)
+    Categories = Category.objects.all()
+    context = {
+        'cat': cat,
+        'category': Categories,
+        'now': now
+
+    }
+    print(id)
+    print(cat)
+    return render(request, 'cat.html', context=context)

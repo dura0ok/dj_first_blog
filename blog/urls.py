@@ -10,5 +10,8 @@ urlpatterns = [
     url(r'^add$', views.post_new, name='post_new'),
     url(r'^post/(?P<pk>\d+)/edit/$', views.post_edit, name='post_edit'),
     url(r'^', include('users.urls')),
+    url(r'^category/(?P<id>[0-9]+)$', views.getcat, name='full'),
+
+
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

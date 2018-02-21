@@ -246,12 +246,60 @@ header img {
 .phone {
     display: none;
 }
+#post_img{
+     width: 400px;
+    height: 300px;
+    display: block;
+    margin: 0 auto;
+}
 
+.wrapper button{
+     background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+}
 
+.wrapper input, textarea, label, button{
+    margin-top: 2%;
+    display: block;
+}
+#navbar{
+    display: flex;
+    margin-top: 4%;
+    margin-bottom: 5%;
+    background-color: black;
+        justify-content: space-around;
+}
+#navbar ul{
+    display: flex;
+    flex-direction: row;
 
+    height: 75px;
+    line-height: 75px;
+}
+#navbar ul li a{
+    margin-left: 15px;
+    text-decoration: none;
+    color: white;
+        font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    font-size: 20px;
+}
+#navbar ul{
+list-style: none;
+}
 /* Media */
 
-
+#test{
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    font-size: 3em;
+    text-align: center;
+}
 /* Стили для маленьких экранов (дисплей шириной от 576 пикселей до 767 пикселей) */
 
 @media (min-width: 576px) and (max-width: 767px) {
@@ -290,7 +338,7 @@ header img {
         height: 75px;
     }
     .phone ul {
-        margin-left: 30%;
+         margin-left: 22%;
         list-style: none;
         line-height: 75px;
         display: flex;
@@ -369,8 +417,7 @@ header img {
         height: 75px;
     }
     .phone ul {
-        margin-left: 30%;
-        list-style: none;
+        margin-left: 22%;
         line-height: 75px;
         display: flex;
         flex-direction: row;

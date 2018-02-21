@@ -2,6 +2,7 @@
 <div class="art">
     {% if user == post.author %}
     <a id="edit" href="/post/{{ post.id }}/edit">Редактировать статью</a> {% endif %}
+    <img id="post_img" src="{{ post.image.url }}">
     <h5>{{ post.title }}</h5>
     <h6>{{ post.published_date }}</h6>
     <p>{{ post.text|linebreaksbr }}</p>

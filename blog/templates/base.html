@@ -3,6 +3,7 @@
 
 <head>
     {% load staticfiles %}
+    <link rel="shortcut icon" href="{% static "favicon.ico" %}" type="image/x-icon">
     <link rel="stylesheet" href="{% static "css/style.css" %}">
     <meta charset="UTF-8">
     <title>Stepan</title>
@@ -11,7 +12,9 @@
 <body>
     <header>
         <h3>Блог-Просто о мире IT!</h3>
+
         <ul>
+            <li class="hit"><a href="/">Главная</a></li>
             {% if user.is_authenticated %}
             <li class="hit"><a href="{% url 'post_new' %}">Добавить запись</a></li>
         </ul>
@@ -34,15 +37,25 @@
         <h2>Привет,<a href="/cabinet">{{ user.username }}</a></h2>
         <img src="{{ user.client.user_photo.url }}">
         <br>
+
         <nav>
             <ul>
+                <li><a href="/">Главная</a></li>
                 <li><a href="{% url 'post_new' %}">Добавить запись</a></li>
                 <li><a href="/logout">Выйти</a></li>
             </ul>
         </nav>
+            <hr>
     </div>
     {% endif %}
     <div class="wrapper">
+    <nav id="navbar">
+        <ul>
+             {% for category in category %}
+            <li><a href="/category/{{ category.id }}">{{ category }}</a></li>
+            {% endfor %}
+        </ul>
+    </nav>
         {% block content %}
         {% endblock %}
     </div>

@@ -3,6 +3,7 @@ from django import forms
 from blog.models import Client
 from blog.models import Comment
 
+
 class CabForm(forms.ModelForm):
 
     class Meta:
